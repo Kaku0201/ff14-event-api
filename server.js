@@ -11,7 +11,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static("public"));
 app.use(express.json());
 
 app.get("/events", (req, res) => {
@@ -37,6 +36,36 @@ app.get("/update", async (_req, res) => {
   } catch (e) {
     console.error(e);
     res.status(500).send("❌ 업데이트 중 오류 발생");
+  }
+});
+
+app.get("/proxy", async (req, res) => {
+  const targetUrl = req.query.url;
+  if (!targetUrl) return res.status(400).send("Missing URL");
+
+  try {
+    const response = await axios.get(targetUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Linux; Android 10; Mobile; rv:89.0) Gecko/89.0 Firefox/89.0",
+      },
+    });
+
+    let html = response.data;
+    const hasHead = html.includes("<head>");
+    const hasViewport = html.includes("viewport");
+
+    if (hasHead && !hasViewport) {
+      html = html.replace(
+        "<head>",
+        `<head><meta name="viewport" content="width=device-width, initial-scale=1.0">`
+      );
+    }
+
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.send(html);
+  } catch (err) {
+    console.error("프록시 실패:", err.message);
+    res.status(500).send("프록시 실패");
   }
 });
 
