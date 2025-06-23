@@ -19,6 +19,7 @@ def fetch_events():
         res = requests.get(f"{BASE_URL}?page={page}", headers=HEADERS)
         soup = BeautifulSoup(res.text, "html.parser")
 
+        # 진행 중 이벤트 목록 추출
         event_list = soup.select("ul.banner_list.event:not(.end)")
         if not event_list:
             print("📭 진행 중 이벤트 없음. 종료.")
@@ -33,25 +34,19 @@ def fetch_events():
             a_tag = li.select_one("a")
             title_tag = li.select_one(".txt_box .title .txt")
             date_tag = li.select_one(".date")
-            image_tag = li.select_one(".banner_img_wrap")
-
-            image_url = ""
-            if image_tag and "background-image" in image_tag.get("style", ""):
-                style = image_tag["style"]
-                start = style.find("url(")
-                end = style.find(")", start)
-                if start != -1 and end != -1:
-                    image_url = style[start + 4:end].strip('"')
+            desc_tag = li.select_one(".summary.dot")
 
             if a_tag and title_tag and date_tag:
                 title = title_tag.text.strip()
                 date = date_tag.text.strip()
                 link = "https://www.ff14.co.kr" + a_tag["href"]
+                description = desc_tag.text.strip() if desc_tag else ""
+
                 events.append({
                     "title": title,
                     "date": date,
                     "link": link,
-                    "image": image_url
+                    "description": description  # ✅ 설명 추가
                 })
 
         print(f"📄 페이지 {page} 처리 완료. 누적 {len(events)}건")
