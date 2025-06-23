@@ -6,7 +6,10 @@ import os
 URL = "https://www.ff14.co.kr/news/event"
 
 def fetch_events():
-    res = requests.get(URL)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
+    res = requests.get(URL, headers=headers)
     soup = BeautifulSoup(res.text, "html.parser")
     events = []
 
