@@ -2,53 +2,61 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import os
-import re
+import time
 
 BASE_URL = "https://www.ff14.co.kr/news/event"
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    "User-Agent": "Mozilla/5.0"
 }
-
-def extract_image_url(style: str) -> str:
-    match = re.search(r'url\((.*?)\)', style)
-    if match:
-        return match.group(1).strip("'\"")
-    return ""
+MAX_PAGE = 10  # 페이지 제한 (안정성 확보)
 
 def fetch_events():
     events = []
     page = 1
 
-    while True:
-        print(f"🔍 페이지 {page} 가져오는 중...")
+    while page <= MAX_PAGE:
+        print(f"🔍 페이지 {page} 요청 중...")
         res = requests.get(f"{BASE_URL}?page={page}", headers=HEADERS)
         soup = BeautifulSoup(res.text, "html.parser")
 
         event_list = soup.select("ul.banner_list.event:not(.end)")
         if not event_list:
+            print("📭 진행 중 이벤트 없음. 종료.")
             break
 
         cards = event_list[0].select("li")
         if not cards:
+            print("📭 카드 없음. 종료.")
             break
 
         for li in cards:
             a_tag = li.select_one("a")
             title_tag = li.select_one(".txt_box .title .txt")
             date_tag = li.select_one(".date")
-            img_tag = li.select_one(".banner_img_wrap")
+            image_tag = li.select_one(".banner_img_wrap")
+
+            image_url = ""
+            if image_tag and "background-image" in image_tag.get("style", ""):
+                style = image_tag["style"]
+                start = style.find("url(")
+                end = style.find(")", start)
+                if start != -1 and end != -1:
+                    image_url = style[start + 4:end].strip('"')
 
             if a_tag and title_tag and date_tag:
                 title = title_tag.text.strip()
                 date = date_tag.text.strip()
                 link = "https://www.ff14.co.kr" + a_tag["href"]
-                style = img_tag.get("style", "") if img_tag else ""
-                image = extract_image_url(style)
-                events.append({"title": title, "date": date, "link": link, "image": image})
+                events.append({
+                    "title": title,
+                    "date": date,
+                    "link": link,
+                    "image": image_url
+                })
 
+        print(f"📄 페이지 {page} 처리 완료. 누적 {len(events)}건")
         page += 1
-
-    events.sort(key=lambda e: e["date"], reverse=True)  # 최신순 정렬
+        time.sleep(1)  # 서버 부담 방지
 
     os.makedirs("events", exist_ok=True)
     with open("events/events.json", "w", encoding="utf-8") as f:
