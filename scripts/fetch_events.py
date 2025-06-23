@@ -13,15 +13,15 @@ def fetch_events():
     soup = BeautifulSoup(res.text, "html.parser")
     events = []
 
-    for card in soup.select(".eventArea .box"):
-        title_tag = card.select_one(".tit")
-        date_tag = card.select_one(".date")
-        link_tag = card.select_one("a")
+    for li in soup.select(".banner_list.event li"):
+        a_tag = li.select_one("a")
+        title_tag = li.select_one(".txt_box .title .txt")
+        date_tag = li.select_one(".date")
 
-        if title_tag and date_tag and link_tag:
+        if a_tag and title_tag and date_tag:
             title = title_tag.text.strip()
             date = date_tag.text.strip()
-            link = "https://www.ff14.co.kr" + link_tag["href"]
+            link = "https://www.ff14.co.kr" + a_tag["href"]
             events.append({"title": title, "date": date, "link": link})
 
     os.makedirs("events", exist_ok=True)
