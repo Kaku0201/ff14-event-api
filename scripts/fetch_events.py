@@ -10,10 +10,10 @@ def fetch_events():
     soup = BeautifulSoup(res.text, "html.parser")
     events = []
 
-    for li in soup.select(".event_list li"):
-        title_tag = li.select_one(".tit")
-        date_tag = li.select_one(".date")
-        link_tag = li.select_one("a")
+    for card in soup.select(".eventArea .box"):
+        title_tag = card.select_one(".tit")
+        date_tag = card.select_one(".date")
+        link_tag = card.select_one("a")
 
         if title_tag and date_tag and link_tag:
             title = title_tag.text.strip()
@@ -24,6 +24,8 @@ def fetch_events():
     os.makedirs("events", exist_ok=True)
     with open("events/events.json", "w", encoding="utf-8") as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
+
+    print(f"✔ 크롤링 완료: {len(events)}건")
 
 if __name__ == "__main__":
     fetch_events()
