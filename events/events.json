@@ -12,18 +12,6 @@
     "description": "신규 의상부터 헤어카탈로그, 하우징 상품까지\n모험가님을 위해 준비한 다양한 신규 상품을 지금 만나보세요!"
   },
   {
-    "title": "'멸 어둠의 구름 격투전' 자격증 취득 프로젝트",
-    "date": "25-05-27 ~ 25-06-23",
-    "link": "https://www.ff14.co.kr/news/event/view/655?category=1&page=1",
-    "description": "'멸' 난이도 최초 업데이트 기념, 전문가 자격증 클래스 오픈!\n차근차근, 미션을 완료하면 나도 '멸 어둠의 구름 격투전' 전문가!"
-  },
-  {
-    "title": "치지직 드롭스 이벤트",
-    "date": "25-05-27 ~ 25-06-23",
-    "link": "https://www.ff14.co.kr/news/event/view/654?category=1&page=1",
-    "description": "드롭스가 활성화된 방송을 시청하고\n경험치 증가 아이템과 특별한 꼬마 친구를 받아가세요!"
-  },
-  {
     "title": "게임 정보 이관 혜택",
     "date": "24-11-26 ~ 25-06-25",
     "link": "https://www.ff14.co.kr/news/event/view/616?category=1&page=1",
@@ -38,13 +26,13 @@
   {
     "title": "내 정보 업데이트 이벤트",
     "date": "23-03-09 ~ 25-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=1",
     "description": "모그리와 함께 내 정보를 업데이트하고 \n모그모그 세트와 염색약까지 받아가세요!"
   },
   {
     "title": "GARO 콜라보 이벤트",
     "date": "22-10-04 ~ 25-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=1",
     "description": "신규 직업과 함께 돌아온 GARO 콜라보 이벤트! \nPvP 콘텐츠에 참여하고 특별한 장비와 탈것을 모두 쟁취하세요!"
   },
   {
@@ -74,13 +62,13 @@
   {
     "title": "몬스터헌터:월드 콜라보레이션",
     "date": "19-01-14 ~ 25-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=2",
     "description": "하늘의 왕 등장! 리오레우스 사냥 개시!"
   },
   {
     "title": "구부는 탱커를 좋아해!",
     "date": "15-10-06 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=2",
     "description": "구부는 탱커를 좋아해!"
   }
 ]
