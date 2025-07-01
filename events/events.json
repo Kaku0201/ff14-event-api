@@ -1,5 +1,17 @@
 [
   {
+    "title": "10주년 모험가의 모그레터",
+    "date": "25-07-01 ~ 25-07-21",
+    "link": "https://www.ff14.co.kr/news/event/view/659?category=1&page=1",
+    "description": "모험가님의 축하 메시지 또는 사연을 공유하여\n파이널판타지14 10주년을 함께 축하해 주세요!"
+  },
+  {
+    "title": "파이널판타지14 10주년 기념 페이지",
+    "date": "25-07-01 ~ 25-10-31",
+    "link": "https://www.ff14.co.kr/news/event/view/658?category=1&page=1",
+    "description": "파이널판타지14 한국 서비스 10주년을 기념하여\n모험가님과 함께할 다양한 이벤트를 만나보세요!"
+  },
+  {
     "title": "모그모그★컬렉션 환상과의 해후",
     "date": "25-06-17 ~ 25-07-15",
     "link": "https://www.ff14.co.kr/news/event/view/657?category=1&page=1",
@@ -26,13 +38,13 @@
   {
     "title": "GARO 콜라보 이벤트",
     "date": "22-10-04 ~ 25-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=1",
+    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
     "description": "신규 직업과 함께 돌아온 GARO 콜라보 이벤트! \nPvP 콘텐츠에 참여하고 특별한 장비와 탈것을 모두 쟁취하세요!"
   },
   {
     "title": "우대 서버만의 특별한 혜택!",
     "date": "21-10-18 ~ 25-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=1",
+    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=2",
     "description": "빠른 성장과 기초 아이템 지원 혜택까지!\n우대 서버에서만 누릴 수 있는 혜택을 확인해보세요!"
   },
   {
@@ -62,7 +74,7 @@
   {
     "title": "구부는 탱커를 좋아해!",
     "date": "15-10-06 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=3",
     "description": "구부는 탱커를 좋아해!"
   }
 ]
