@@ -1,5 +1,17 @@
 [
   {
+    "title": "별빛축제",
+    "date": "25-12-02 ~ 25-12-15",
+    "link": "https://www.ff14.co.kr/news/event/view/698?category=1&page=1",
+    "description": "시장에서 나누는 마음속 온기"
+  },
+  {
+    "title": "별빛축제 시즈널 상품 출시!",
+    "date": "25-12-02 ~ 25-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/697?category=1&page=1",
+    "description": "별빛축제를 기념하여 만들어진\n특별한 의상과 하우징 상품을 만나보세요!"
+  },
+  {
     "title": "맞춤형 이용권 패키지 출시!",
     "date": "25-11-25 ~ 25-12-22",
     "link": "https://www.ff14.co.kr/news/event/view/696?category=1&page=1",
@@ -26,13 +38,13 @@
   {
     "title": "내 정보 업데이트 이벤트",
     "date": "23-03-09 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=1",
+    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=2",
     "description": "모그리와 함께 내 정보를 업데이트하고 \n모그모그 세트와 염색약까지 받아가세요!"
   },
   {
     "title": "GARO 콜라보 이벤트",
     "date": "22-10-04 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=1",
+    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
     "description": "신규 직업과 함께 돌아온 GARO 콜라보 이벤트! \nPvP 콘텐츠에 참여하고 특별한 장비와 탈것을 모두 쟁취하세요!"
   },
   {
@@ -62,7 +74,7 @@
   {
     "title": "구부는 탱커를 좋아해!",
     "date": "15-10-06 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=3",
     "description": "구부는 탱커를 좋아해!"
   }
 ]
