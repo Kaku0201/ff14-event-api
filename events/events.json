@@ -1,15 +1,27 @@
 [
   {
+    "title": "별빛축제",
+    "date": "25-12-16 ~ 25-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/702?category=1&page=1",
+    "description": "별이 쏟아지는 밤에, 따뜻한 한잔의 여유"
+  },
+  {
+    "title": "FFXIV × MONSTER HUNTER WILDS",
+    "date": "25-12-16 ~ 26-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/701?category=1&page=1",
+    "description": "2025년 12월 23일(화) 수호룡 알슈베르도, 강림!\n사냥에 도전하고 특별한 보상을 획득해 보세요!"
+  },
+  {
+    "title": "크리스탈샵 신상 출시",
+    "date": "25-12-16 ~ 25-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/700?category=1&page=1",
+    "description": "의상부터 오케스트리온, 꼬마친구까지!\n다양한 신규 상품을 지금 크리스탈샵에서 만나보세요!"
+  },
+  {
     "title": "에오르제아 최고의 순간!",
     "date": "25-12-15 ~ 25-12-28",
     "link": "https://www.ff14.co.kr/news/event/view/699?category=1&page=1",
     "description": "웃음과 감동이 함께한 모험 속\n모험가님의 최고의 순간을 공유해 주세요!"
-  },
-  {
-    "title": "별빛축제",
-    "date": "25-12-02 ~ 25-12-15",
-    "link": "https://www.ff14.co.kr/news/event/view/698?category=1&page=1",
-    "description": "시장에서 나누는 마음속 온기"
   },
   {
     "title": "별빛축제 시즈널 상품 출시!",
@@ -26,13 +38,13 @@
   {
     "title": "오늘의 목표 챌린지",
     "date": "25-11-25 ~ 25-12-22",
-    "link": "https://www.ff14.co.kr/news/event/view/695?category=1&page=1",
+    "link": "https://www.ff14.co.kr/news/event/view/695?category=1&page=2",
     "description": "매일매일 오늘의 목표를 완료하고 챌린지를 달성해 보세요!\n멋지게 챌린지를 달성한 모험가님께 푸짐한 보상을 드립니다."
   },
   {
     "title": "친구 초대 혜택",
     "date": "25-07-15 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=1",
+    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=2",
     "description": "함께하는 친구가 많을수록 즐거워진다! \n더욱 강화된 친구 초대 혜택을 확인해 보세요!"
   },
   {
@@ -62,13 +74,13 @@
   {
     "title": "모험가 성장 지원",
     "date": "21-01-12 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/351?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/351?category=1&page=3",
     "description": "플레이만 하면 장비 풀세트와 아이템 지급!"
   },
   {
     "title": "요르하: 어둠의 묵시록",
     "date": "20-03-24 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/300?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/300?category=1&page=3",
     "description": "파이널판타지14 X NieR 시리즈 크리에이터"
   },
   {
