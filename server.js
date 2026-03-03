@@ -3,6 +3,7 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import cron from "node-cron";
+import axios from "axios"; // ✅ 에러 방지: proxy에서 사용하는 axios 임포트 추가!
 import { updateEvents } from "./update.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -71,10 +72,12 @@ app.get("/proxy", async (req, res) => {
 
 app.listen(PORT, async () => {
   console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
-  await updateEvents();
+  await updateEvents(); // 서버 켜질 때 즉시 1번 업데이트
 });
 
-cron.schedule("*/30 * * * *", async () => {
-  console.log(`[${new Date().toISOString()}] ⏰ Scheduled updateEvents 실행`);
+// ✅ 핵심 수정: "1 0 * * * *" = 매시 0분 1초에 실행 (예: 12:00:01, 13:00:01)
+// node-cron은 초 단위까지 지원하므로 맨 앞이 '초' 자리입니다.
+cron.schedule("1 0 * * * *", async () => {
+  console.log(`[${new Date().toISOString()}] ⏰ 매시 정각 1초! 이벤트 업데이트 실행`);
   await updateEvents();
 });
