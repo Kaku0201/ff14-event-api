@@ -1,32 +1,8 @@
 [
   {
-    "title": "GARO 콜라보 이벤트",
-    "date": "22-10-04 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
-    "description": ""
-  },
-  {
-    "title": "구부는 탱커를 좋아해!",
-    "date": "15-10-06 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=2",
-    "description": ""
-  },
-  {
-    "title": "요르하: 어둠의 묵시록",
-    "date": "20-03-24 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/300?category=1&page=2",
-    "description": ""
-  },
-  {
     "title": "내 정보 업데이트 이벤트",
     "date": "23-03-09 ~ 30-12-31",
     "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=1",
-    "description": ""
-  },
-  {
-    "title": "몬스터헌터:월드 콜라보레이션",
-    "date": "19-01-14 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=2",
     "description": ""
   },
   {
@@ -36,21 +12,15 @@
     "description": ""
   },
   {
-    "title": "우대 서버만의 특별한 혜택!",
-    "date": "21-10-18 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=2",
+    "title": "'안개 속 이상향' 신규 상품 출시!",
+    "date": "26-02-03 ~ 26-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/715?category=1&page=1",
     "description": ""
   },
   {
-    "title": "모험가 성장 지원",
-    "date": "21-01-12 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/351?category=1&page=2",
-    "description": ""
-  },
-  {
-    "title": "친구 초대 혜택",
-    "date": "25-07-15 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=1",
+    "title": "GARO 콜라보 이벤트",
+    "date": "22-10-04 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
     "description": ""
   },
   {
@@ -60,15 +30,45 @@
     "description": ""
   },
   {
-    "title": "'안개 속 이상향' 신규 상품 출시!",
-    "date": "26-02-03 ~ 26-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/715?category=1&page=1",
+    "title": "요르하: 어둠의 묵시록",
+    "date": "20-03-24 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/300?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "모험가 성장 지원",
+    "date": "21-01-12 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/351?category=1&page=2",
     "description": ""
   },
   {
     "title": "무료 플레이 혜택",
     "date": "24-04-02 ~ 30-12-31",
     "link": "https://www.ff14.co.kr/news/event/view/564?category=1&page=1",
+    "description": ""
+  },
+  {
+    "title": "구부는 탱커를 좋아해!",
+    "date": "15-10-06 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "우대 서버만의 특별한 혜택!",
+    "date": "21-10-18 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "몬스터헌터:월드 콜라보레이션",
+    "date": "19-01-14 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "친구 초대 혜택",
+    "date": "25-07-15 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=1",
     "description": ""
   }
 ]
