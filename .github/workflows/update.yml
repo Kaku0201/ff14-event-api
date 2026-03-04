@@ -8,7 +8,7 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    # ✅ 봇에게 쓰기 권한을 명시적으로 부여합니다.
+
     permissions:
       contents: write
 
@@ -18,26 +18,26 @@ jobs:
         with:
           ref: main
 
-      # 🚨 1. 파이썬(Python) 대신 노드(Node.js)를 세팅합니다.
+    
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # ES Modules를 지원하는 최신 안정화 버전
+          node-version: '20' # ES Modules를 지원하는 최신 안정화 버전
 
-      # 🚨 2. package.json에 적어둔 패키지(firebase-admin 등)를 설치합니다.
+     
       - name: Install dependencies
         run: npm install
 
-      # 🚨 3. 우리가 방금 완성한 update.js를 실행하고 비밀 금고 열쇠를 넘겨줍니다!
+     
       - name: Run update.js
         run: node update.js
         env:
           FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
 
-      # ✅ 4. 전용 커밋 액션을 사용하여 업데이트된 이벤트를 자동 저장합니다.
+     
       - name: Auto Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🤖 자동 업데이트: 이벤트 목록 갱신 및 푸시 발송"
-          file_pattern: 'events.json' # update.js가 저장하는 위치
+          file_pattern: 'events.json' 
           branch: main
