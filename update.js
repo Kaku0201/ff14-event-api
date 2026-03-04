@@ -74,6 +74,15 @@ export async function updateEvents() {
     (ev, i, arr) => arr.findIndex((a) => a.link === ev.link) === i
   );
 
+  unique.sort((a, b) => {
+    // "view/721" 같은 주소에서 숫자(721)만 쏙 빼냅니다.
+    const idA = parseInt((a.link.match(/view\/(\d+)/) || [0, 0])[1], 10);
+    const idB = parseInt((b.link.match(/view\/(\d+)/) || [0, 0])[1], 10);
+    
+    return idB - idA; // 큰 번호(최신글)가 배열의 맨 앞으로 오게 내림차순 정렬
+  });
+
+  // 파일로 저장
   fs.writeFileSync(EVENTS_FILE, JSON.stringify(unique, null, 2), "utf-8");
   console.log(
     `[${new Date().toISOString()}] ✅ 업데이트 완료: 총 ${unique.length}건 저장됨`
