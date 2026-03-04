@@ -1,38 +1,8 @@
 [
   {
-    "title": "우대 서버만의 특별한 혜택!",
-    "date": "21-10-18 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=2",
-    "description": ""
-  },
-  {
     "title": "에오르제아 요원 양성 계획",
     "date": "26-03-03 ~ 26-03-30",
     "link": "https://www.ff14.co.kr/news/event/view/722?category=1&page=1",
-    "description": ""
-  },
-  {
-    "title": "친구 초대 혜택",
-    "date": "25-07-15 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=1",
-    "description": ""
-  },
-  {
-    "title": "내 정보 업데이트 이벤트",
-    "date": "23-03-09 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=2",
-    "description": ""
-  },
-  {
-    "title": "맞춤형 이용권 패키지 출시!",
-    "date": "26-03-03 ~ 26-03-30",
-    "link": "https://www.ff14.co.kr/news/event/view/723?category=1&page=1",
-    "description": ""
-  },
-  {
-    "title": "FFXIV × MONSTER HUNTER WILDS",
-    "date": "25-12-16 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/701?category=1&page=1",
     "description": ""
   },
   {
@@ -42,15 +12,9 @@
     "description": ""
   },
   {
-    "title": "프린세스데이",
-    "date": "26-03-03 ~ 26-03-16",
-    "link": "https://www.ff14.co.kr/news/event/view/721?category=1&page=1",
-    "description": ""
-  },
-  {
-    "title": "무료 플레이 혜택",
-    "date": "24-04-02 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/564?category=1&page=1",
+    "title": "몬스터헌터:월드 콜라보레이션",
+    "date": "19-01-14 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=2",
     "description": ""
   },
   {
@@ -60,15 +24,51 @@
     "description": ""
   },
   {
-    "title": "몬스터헌터:월드 콜라보레이션",
-    "date": "19-01-14 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=2",
+    "title": "우대 서버만의 특별한 혜택!",
+    "date": "21-10-18 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "프린세스데이",
+    "date": "26-03-03 ~ 26-03-16",
+    "link": "https://www.ff14.co.kr/news/event/view/721?category=1&page=1",
+    "description": ""
+  },
+  {
+    "title": "친구 초대 혜택",
+    "date": "25-07-15 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=1",
+    "description": ""
+  },
+  {
+    "title": "무료 플레이 혜택",
+    "date": "24-04-02 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/564?category=1&page=1",
+    "description": ""
+  },
+  {
+    "title": "맞춤형 이용권 패키지 출시!",
+    "date": "26-03-03 ~ 26-03-30",
+    "link": "https://www.ff14.co.kr/news/event/view/723?category=1&page=1",
     "description": ""
   },
   {
     "title": "GARO 콜라보 이벤트",
     "date": "22-10-04 ~ 30-12-31",
     "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "내 정보 업데이트 이벤트",
+    "date": "23-03-09 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=2",
+    "description": ""
+  },
+  {
+    "title": "FFXIV × MONSTER HUNTER WILDS",
+    "date": "25-12-16 ~ 30-12-31",
+    "link": "https://www.ff14.co.kr/news/event/view/701?category=1&page=1",
     "description": ""
   }
 ]
