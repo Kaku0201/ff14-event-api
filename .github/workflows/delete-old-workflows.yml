@@ -1,0 +1,15 @@
+name: Delete old workflow runs
+on:
+  schedule:
+    - cron: '0 0 1 * *' # 매월 1일 00:00에 실행
+  workflow_dispatch: # 수동 실행 가능
+
+jobs:
+  del_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete workflow runs
+        uses: JuvenileQ/delete-workflow-runs@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          retain_days: 0 # 모든 이전 기록 삭제
