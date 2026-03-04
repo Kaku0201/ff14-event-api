@@ -10,9 +10,19 @@ const __dirname = path.dirname(__filename);
 const EVENTS_FILE = path.resolve(__dirname, "./events.json");
 
 // ✅ 파이어베이스 안전 초기화 (server.js와 충돌하지 않도록 확인 후 켭니다)
-const serviceAccountPath = path.resolve(__dirname, "./firebase-adminsdk.json");
-if (!admin.apps.length && fs.existsSync(serviceAccountPath)) {
-  const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
+let serviceAccount;
+if (process.env.FIREBASE_CREDENTIALS) {
+  // 깃허브 액션(서버)에서 돌아갈 때는 비밀 금고에서 열쇠를 꺼냅니다!
+  serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+} else {
+  // 내 컴퓨터에서 테스트할 때는 기존처럼 파일을 읽습니다.
+  const serviceAccountPath = path.resolve(__dirname, "./firebase-adminsdk.json");
+  if (fs.existsSync(serviceAccountPath)) {
+    serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
+  }
+}
+
+if (serviceAccount && !admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
