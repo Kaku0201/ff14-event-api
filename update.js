@@ -12,48 +12,50 @@ export async function updateEvents() {
   console.log(`[${new Date().toISOString()}] ▶ updateEvents 시작`);
 
   const allEvents = [];
-  const MAX_PAGE = 2; // 가져올 페이지 수 (필요시 늘려주세요)
+  const pages = [
+    "https://www.ff14.co.kr/news/event",
+    "https://www.ff14.co.kr/news/event?page=2",
+  ];
 
-  for (let page = 1; page <= MAX_PAGE; page++) {
-    const url = `https://www.ff14.co.kr/news/event?page=${page}`;
+  for (const url of pages) {
     console.log("▶ 크롤링:", url);
+    const { data } = await axios.get(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (Mobile)" },
+    });
+    const $ = cheerio.load(data);
 
-    try {
-      const { data } = await axios.get(url, {
-        headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" },
-      });
-      const $ = cheerio.load(data);
+    // ✅ 종료된 이벤트(.end)를 제외하고 진행 중인 이벤트만 정확히 타겟팅
+    const eventList = $("ul.banner_list.event:not(.end) li");
 
-      // ✅ Python 코드의 우수한 선택자 로직을 그대로 이식했습니다!
-      const eventList = $("ul.banner_list.event:not(.end) li");
+    if (eventList.length === 0) {
+      console.warn("  ⚠️ 이벤트 요소를 찾지 못했습니다.");
+      continue;
+    }
 
-      if (eventList.length === 0) {
-        console.log("  📭 진행 중 이벤트가 더 이상 없습니다.");
-        break; // 진행 중인 이벤트가 없으면 다음 페이지로 갈 필요 없이 멈춤
+    eventList.each((_, el) => {
+      const $el = $(el);
+      
+      const anchor = $el.find("a").first();
+      const href = anchor.attr("href") || "";
+      const link = href.startsWith("http")
+        ? href
+        : `https://www.ff14.co.kr${href}`;
+
+      // ✅ 정규식으로 텍스트를 쪼개지 않고, 클래스명으로 텍스트를 안전하게 직출출!
+      let title = $el.find(".txt_box .title .txt").text().trim();
+      // 만약 공홈 구조가 살짝 다를 경우를 대비한 예비(fallback) 로직
+      if (!title) {
+         title = $el.find(".title").text().trim();
       }
 
-      eventList.each((_, el) => {
-        const $el = $(el);
-        const title = $el.find(".txt_box .title .txt").text().trim();
-        const date = $el.find(".date").text().trim();
-        const description = $el.find(".summary.dot").text().trim();
-        const href = $el.find("a").attr("href") || "";
-        const link = href.startsWith("http") ? href : `https://www.ff14.co.kr${href}`;
-
-        // 제목과 날짜가 정상적으로 있을 때만 배열에 추가
-        if (title && date) {
-          allEvents.push({ title, date, link, description });
-        }
-      });
+      let date = $el.find(".date").text().trim();
+      let description = $el.find(".summary.dot").text().trim();
       
-      console.log(`  • 페이지 ${page} 에서 ${eventList.length}개 찾음`);
-      
-      // 서버 부담을 줄이기 위해 페이지 전환 시 1초 대기 (매너 타이머)
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-    } catch (error) {
-      console.error(`  ❌ 페이지 ${page} 크롤링 실패:`, error.message);
-    }
+      // 제목과 링크가 존재하면 무조건 리스트에 추가 (날짜 형식이 이상해도 OK!)
+      if (title && link) {
+        allEvents.push({ title, date, link, description });
+      }
+    });
   }
 
   // 중복된 이벤트 제거 (링크 기준)
@@ -61,14 +63,13 @@ export async function updateEvents() {
     (ev, i, arr) => arr.findIndex((a) => a.link === ev.link) === i,
   );
 
-  // JSON 파일로 저장
   fs.writeFileSync(EVENTS_FILE, JSON.stringify(unique, null, 2), "utf-8");
   console.log(
-    `[${new Date().toISOString()}] ✅ 업데이트 완료: 총 ${unique.length}건 저장됨`
+    `[${new Date().toISOString()}] ✅ 업데이트 완료: ${unique.length}건 저장됨`
   );
 }
 
-// 직접 실행했을 때 작동하도록 설정
+// 직접 실행했을 때 동작하도록 설정
 if (import.meta.url === `file://${process.argv[1]}`) {
   updateEvents();
 }
