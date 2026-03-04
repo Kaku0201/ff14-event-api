@@ -6,13 +6,13 @@ import cron from "node-cron";
 import axios from "axios";
 import { updateEvents } from "./update.js";
 
-// ✅ 1. 파이어베이스 관리자 도구 불러오기
+
 import admin from "firebase-admin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ✅ 2. 파이어베이스 열쇠(JSON) 파일 읽어오기 및 초기화
+
 const serviceAccountPath = path.join(__dirname, "firebase-adminsdk.json");
 const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
 
@@ -20,14 +20,14 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-// ✅ 3. 푸시 알림 발사 함수 (다른 파일에서도 쓸 수 있게 export 합니다)
+
 export async function sendPushNotification(title, body) {
   const message = {
     notification: {
       title: title,
       body: body
     },
-    topic: "ff14_events" // 앱에서 구독한 채널 이름과 정확히 일치해야 함!
+    topic: "ff14_events" 
   };
 
   try {
