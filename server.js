@@ -77,7 +77,7 @@ app.listen(PORT, async () => {
 
 // ✅ 핵심 수정: "1 0 * * * *" = 매시 0분 1초에 실행 (예: 12:00:01, 13:00:01)
 // node-cron은 초 단위까지 지원하므로 맨 앞이 '초' 자리입니다.
-cron.schedule("1 0 * * * *", async () => {
-  console.log(`[${new Date().toISOString()}] ⏰ 매시 정각 1초! 이벤트 업데이트 실행`);
+cron.schedule("2 0 * * * *", async () => {
+  console.log(`[${new Date().toISOString()}] ⏰ 정각 2초 갱신 실행!`);
   await updateEvents();
 });
