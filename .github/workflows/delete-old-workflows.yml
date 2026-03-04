@@ -12,4 +12,4 @@ jobs:
         uses: JuvenileQ/delete-workflow-runs@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          retain_days: 0 # 모든 이전 기록 삭제
+          keep_minimum_runs: 2
