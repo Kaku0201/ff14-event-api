@@ -3,11 +3,40 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import cron from "node-cron";
-import axios from "axios"; // ✅ 에러 방지: proxy에서 사용하는 axios 임포트 추가!
+import axios from "axios";
 import { updateEvents } from "./update.js";
+
+// ✅ 1. 파이어베이스 관리자 도구 불러오기
+import admin from "firebase-admin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// ✅ 2. 파이어베이스 열쇠(JSON) 파일 읽어오기 및 초기화
+const serviceAccountPath = path.join(__dirname, "firebase-adminsdk.json");
+const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+// ✅ 3. 푸시 알림 발사 함수 (다른 파일에서도 쓸 수 있게 export 합니다)
+export async function sendPushNotification(title, body) {
+  const message = {
+    notification: {
+      title: title,
+      body: body
+    },
+    topic: "ff14_events" // 앱에서 구독한 채널 이름과 정확히 일치해야 함!
+  };
+
+  try {
+    const response = await admin.messaging().send(message);
+    console.log("🔔 [푸시 알림 전송 성공]:", response);
+  } catch (error) {
+    console.error("❌ [푸시 알림 전송 실패]:", error);
+  }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -72,11 +101,9 @@ app.get("/proxy", async (req, res) => {
 
 app.listen(PORT, async () => {
   console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
-  await updateEvents(); // 서버 켜질 때 즉시 1번 업데이트
+  await updateEvents(); 
 });
 
-// ✅ 핵심 수정: "1 0 * * * *" = 매시 0분 1초에 실행 (예: 12:00:01, 13:00:01)
-// node-cron은 초 단위까지 지원하므로 맨 앞이 '초' 자리입니다.
 cron.schedule("2 0 * * * *", async () => {
   console.log(`[${new Date().toISOString()}] ⏰ 정각 2초 갱신 실행!`);
   await updateEvents();
