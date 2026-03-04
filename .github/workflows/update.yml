@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -13,26 +14,30 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # 최신 버전 사용
+        uses: actions/checkout@v4
         with:
-          ref: main # 메인 브랜치 명시
+          ref: main
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      # 🚨 1. 파이썬(Python) 대신 노드(Node.js)를 세팅합니다.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.x'
+          node-version: '18' # ES Modules를 지원하는 최신 안정화 버전
 
+      # 🚨 2. package.json에 적어둔 패키지(firebase-admin 등)를 설치합니다.
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: npm install
 
-      - name: Run fetch_events.py
-        run: python scripts/fetch_events.py
+      # 🚨 3. 우리가 방금 완성한 update.js를 실행하고 비밀 금고 열쇠를 넘겨줍니다!
+      - name: Run update.js
+        run: node update.js
+        env:
+          FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
 
-      # ✅ [가장 중요] 전용 커밋 액션을 사용합니다. 
-      # 이 액션은 알아서 pull을 받고 충돌을 해결한 뒤 안전하게 올립니다.
+      # ✅ 4. 전용 커밋 액션을 사용하여 업데이트된 이벤트를 자동 저장합니다.
       - name: Auto Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 자동 업데이트: 이벤트 목록 갱신"
-          file_pattern: 'events/events.json'
+          commit_message: "🤖 자동 업데이트: 이벤트 목록 갱신 및 푸시 발송"
+          file_pattern: 'events.json' # update.js가 저장하는 위치
           branch: main
