@@ -2,8 +2,7 @@ name: Update Events
 
 on:
   schedule:
-    - cron: '0 * * * *' # 매시 정각 실행
-  workflow_dispatch:
+    - cron: '0 * * * *'
 
 jobs:
   update:
