@@ -3,19 +3,19 @@ import * as cheerio from "cheerio";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import admin from "firebase-admin"; // ✅ 푸시 알림을 위해 파이어베이스 도구 추가
+import admin from "firebase-admin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const EVENTS_FILE = path.resolve(__dirname, "./events.json");
 
-// ✅ 파이어베이스 안전 초기화 (server.js와 충돌하지 않도록 확인 후 켭니다)
+
 let serviceAccount;
 if (process.env.FIREBASE_CREDENTIALS) {
-  // 깃허브 액션(서버)에서 돌아갈 때는 비밀 금고에서 열쇠를 꺼냅니다!
+
   serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
 } else {
-  // 내 컴퓨터에서 테스트할 때는 기존처럼 파일을 읽습니다.
+
   const serviceAccountPath = path.resolve(__dirname, "./firebase-adminsdk.json");
   if (fs.existsSync(serviceAccountPath)) {
     serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
@@ -31,7 +31,7 @@ if (serviceAccount && !admin.apps.length) {
 export async function updateEvents() {
   console.log(`[${new Date().toISOString()}] ▶ updateEvents 시작`);
 
-  // 💡 1. 기존 이벤트 불러오기 (새 이벤트 비교용)
+
   let oldEvents = [];
   if (fs.existsSync(EVENTS_FILE)) {
     try {
@@ -98,16 +98,16 @@ export async function updateEvents() {
     (ev, i, arr) => arr.findIndex((a) => a.link === ev.link) === i
   );
 
-  // 💡 2. 새 이벤트 찾아내기 (기존 목록에 없는 링크 찾기)
+
   const oldLinks = oldEvents.map((e) => e.link);
   const newEvents = unique.filter((e) => !oldLinks.includes(e.link));
 
-  // 💡 3. 파일 최신화 저장
+
   fs.writeFileSync(EVENTS_FILE, JSON.stringify(unique, null, 2), "utf-8");
   console.log(`[${new Date().toISOString()}] ✅ 업데이트 완료: 총 ${unique.length}건 저장됨`);
 
-  // 🚀 4. 진짜 '새 이벤트'가 있을 때만 앱으로 알림 쏘기!
-  // (oldEvents.length > 0 조건은, 처음 서버 켤 때 기존 이벤트 수십 개가 알림으로 폭격되는 것을 막아줍니다)
+
+
   if (oldEvents.length > 0 && newEvents.length > 0) {
     console.log(`🎉 새로운 이벤트 ${newEvents.length}개 발견! 알림 전송을 시작합니다.`);
     
@@ -118,12 +118,12 @@ export async function updateEvents() {
             title: `🎉 신규 이벤트: ${ev.title}`,
             body: ev.description || "새로운 이벤트가 시작되었습니다! 앱에서 확인하세요."
           },
-          topic: "ff14_events" // 앱에서 구독한 이름!
+          topic: "ff14_events" 
         };
         await admin.messaging().send(message);
         console.log(`🔔 알림 전송 성공: ${ev.title}`);
         
-        // 여러 개일 경우 너무 동시에 가지 않도록 0.5초 딜레이
+
         await new Promise(res => setTimeout(res, 500)); 
       } catch (error) {
         console.error(`❌ 알림 전송 실패 (${ev.title}):`, error);
