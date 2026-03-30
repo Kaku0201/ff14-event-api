@@ -12,24 +12,6 @@
     "description": "미소를 담은 여정의 기억"
   },
   {
-    "title": "골드 소서 축제",
-    "date": "26-03-17 ~ 26-03-30",
-    "link": "https://www.ff14.co.kr/news/event/view/724?category=1&page=1",
-    "description": "황금빛 동료들과, 황금 같은 시간을"
-  },
-  {
-    "title": "맞춤형 이용권 패키지 출시!",
-    "date": "26-03-03 ~ 26-03-30",
-    "link": "https://www.ff14.co.kr/news/event/view/723?category=1&page=1",
-    "description": "다양한 혜택을 담은 맞춤형 이용권 패키지로\n하나 되는 모험을 계속해서 준비해 보세요!"
-  },
-  {
-    "title": "에오르제아 요원 양성 계획",
-    "date": "26-03-03 ~ 26-03-30",
-    "link": "https://www.ff14.co.kr/news/event/view/722?category=1&page=1",
-    "description": "비밀 조직에 합류하여 다양한 훈련을 통해 최고의 요원이 되어 보세요!\n요원이 되신 모험가님께 어울리는 멋진 보상을 드립니다!"
-  },
-  {
     "title": "FFXIV × MONSTER HUNTER WILDS",
     "date": "25-12-16 ~ 30-12-31",
     "link": "https://www.ff14.co.kr/news/event/view/701?category=1&page=1",
@@ -38,19 +20,19 @@
   {
     "title": "친구 초대 혜택",
     "date": "25-07-15 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/660?category=1&page=1",
     "description": "함께하는 친구가 많을수록 즐거워진다! \n더욱 강화된 친구 초대 혜택을 확인해 보세요!"
   },
   {
     "title": "무료 플레이 혜택",
     "date": "24-04-02 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/564?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/564?category=1&page=1",
     "description": "기간 제한 없이 70레벨까지!\n무료 플레이 혜택과 함께 최고의 모험을 즐겨보세요."
   },
   {
     "title": "내 정보 업데이트 이벤트",
     "date": "23-03-09 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=1",
     "description": "모그리와 함께 내 정보를 업데이트하고 \n모그모그 세트와 염색약까지 받아가세요!"
   },
   {
@@ -74,19 +56,19 @@
   {
     "title": "요르하: 어둠의 묵시록",
     "date": "20-03-24 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/300?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/300?category=1&page=2",
     "description": "파이널판타지14 X NieR 시리즈 크리에이터"
   },
   {
     "title": "몬스터헌터:월드 콜라보레이션",
     "date": "19-01-14 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/227?category=1&page=2",
     "description": "하늘의 왕 등장! 리오레우스 사냥 개시!"
   },
   {
     "title": "구부는 탱커를 좋아해!",
     "date": "15-10-06 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=2",
     "description": "구부는 탱커를 좋아해!"
   }
 ]
