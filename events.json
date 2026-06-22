@@ -24,33 +24,15 @@
     "description": "치지직에서 '파이널판타지14'드롭스가 활성화된 방송을 시청하고\n다양한 보상을 받아가세요!"
   },
   {
-    "title": "크리스탈샵 특별 할인전",
-    "date": "26-05-26 ~ 26-06-22",
-    "link": "https://www.ff14.co.kr/news/event/view/742?category=1&page=1",
-    "description": "크리스탈샵의 최신 상품을\n기간 한정 특별가로 만나보세요!"
-  },
-  {
-    "title": "반향세계 탐험가",
-    "date": "26-05-26 ~ 26-06-22",
-    "link": "https://www.ff14.co.kr/news/event/view/741?category=1&page=1",
-    "description": "세 반향세계를 탐험하고\n다양한 보상을 교환해 보세요!"
-  },
-  {
     "title": "골드 소서 축제",
     "date": "26-05-22 ~ 26-06-24",
-    "link": "https://www.ff14.co.kr/news/event/view/740?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/740?category=1&page=1",
     "description": "달달이 홍보 대사 등장?"
-  },
-  {
-    "title": "한국&글로벌 서버 동시 패치 기념 이벤트",
-    "date": "26-04-28 ~ 26-06-22",
-    "link": "https://www.ff14.co.kr/news/event/view/738?category=1&page=2",
-    "description": "한국&글로벌 서버 동시 패치까지 함께해 주신 모험가님들께\n감사의 마음을 담아 3일 무료 이용권과 한정 일러스트 월페이퍼를 드립니다!"
   },
   {
     "title": "게임 정보 이관 혜택",
     "date": "26-04-01 ~ 26-07-09",
-    "link": "https://www.ff14.co.kr/news/event/view/728?category=1&page=2",
+    "link": "https://www.ff14.co.kr/news/event/view/728?category=1&page=1",
     "description": "카카오 채널링에서 오신 모험가님을 환영합니다.\n게임 정보 이관을 완료하신 모험가님은 무료 이용권을 받아가세요!"
   },
   {
@@ -74,19 +56,19 @@
   {
     "title": "내 정보 업데이트 이벤트",
     "date": "23-03-09 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/487?category=1&page=2",
     "description": "모그리와 함께 내 정보를 업데이트하고 \n모그모그 세트와 염색약까지 받아가세요!"
   },
   {
     "title": "GARO 콜라보 이벤트",
     "date": "22-10-04 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/460?category=1&page=2",
     "description": "신규 직업과 함께 돌아온 GARO 콜라보 이벤트! \nPvP 콘텐츠에 참여하고 특별한 장비와 탈것을 모두 쟁취하세요!"
   },
   {
     "title": "우대 서버만의 특별한 혜택!",
     "date": "21-10-18 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=3",
+    "link": "https://www.ff14.co.kr/news/event/view/394?category=1&page=2",
     "description": "빠른 성장과 기초 아이템 지원 혜택까지!\n우대 서버에서만 누릴 수 있는 혜택을 확인해보세요!"
   },
   {
@@ -110,7 +92,7 @@
   {
     "title": "구부는 탱커를 좋아해!",
     "date": "15-10-06 ~ 30-12-31",
-    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=4",
+    "link": "https://www.ff14.co.kr/news/event/view/29?category=1&page=3",
     "description": "구부는 탱커를 좋아해!"
   }
 ]
